@@ -2,8 +2,8 @@ version: "3"
 
 services:
   server:
-    image: okhanyu/minichat:latest
-    container_name: minichat
+    image: minichat-plus:latest
+    container_name: minichat-plus
     restart: always
     ports:
       - "8080:8080"
