@@ -6,6 +6,15 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.1.0] - 2026-03-15
+
+### Improved
+
+- **Newline Support** - Press `Shift+Enter` to insert newline, `Enter` to send message
+- **Larger Input Box** - Increased textarea height for better multi-line input experience
+
+---
+
 ## [1.0.0] - 2026-03-15
 
 ### Initial Release

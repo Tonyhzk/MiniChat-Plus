@@ -244,7 +244,7 @@
                             system: msg.cmd === 'join' || msg.cmd === 'exit'
                         }">
                             <div class="msg-item last">
-                                <p v-html="msg.payload"></p>
+                                <p style="white-space:pre-wrap" v-html="msg.payload"></p>
                             </div>
                         </div>
                     </div>
@@ -256,7 +256,7 @@
             <div class="field is-grouped">
                 <div class="control is-expanded field has-addons">
                     <p class="control is-expanded">
-                        <textarea id="message" placeholder="Enter something..." autocomplete="off" autofocus="" rows="1" class="input"></textarea>
+                        <textarea id="message" placeholder="Enter something..." autocomplete="off" autofocus="" rows="4" class="input" style="min-height:80px;height:auto;resize:vertical"></textarea>
                     </p>
                     <p class="control">
                         <button id="send"  @click="send" class="button is-link">Send</button>
@@ -472,7 +472,7 @@
                         let inputElement = document.getElementById('message');
 
                         inputElement.addEventListener('keydown', function(event) {
-                            if (event.keyCode === 13) {
+                            if (event.keyCode === 13 && !event.shiftKey) {
                                 event.preventDefault();
                                 let message = document.getElementById('message').value;
                                 if (ws === null || ws === undefined || ws === "" ) {

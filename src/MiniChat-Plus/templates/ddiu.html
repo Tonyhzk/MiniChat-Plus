@@ -156,7 +156,7 @@
                             <p class="text-red op-90 text-sm" style="margin:0.5rem 0">{[ msg.payload ]}</p>
                         </template>
                         <template v-else>
-                            <p style="margin:0" v-html="msg.payload"></p>
+                            <p style="margin:0;white-space:pre-wrap" v-html="msg.payload"></p>
                         </template>
                     </div>
 
@@ -166,7 +166,7 @@
     </div>
 
     <div class="gen-text-wrapper">
-        <textarea id="message" placeholder="Enter something..." autocomplete="off" autofocus="" rows="1" class="gen-textarea"></textarea><button gen-slate-btn="" id="send"  @click="send" >Send</button><button @click="clearScreen" title="Clear" gen-slate-btn=""><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+        <textarea id="message" placeholder="Enter something..." autocomplete="off" autofocus="" rows="4" class="gen-textarea" style="min-height:80px;height:auto;resize:vertical"></textarea><button gen-slate-btn="" id="send"  @click="send" >Send</button><button @click="clearScreen" title="Clear" gen-slate-btn=""><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
         <path fill="currentColor" d="M8 20v-5h2v5h9v-7H5v7h3zm-4-9h16V8h-6V4h-4v4H4v3zM3 21v-8H2V7a1 1 0 0 1 1-1h5V3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v3h5a1 1 0 0 1 1 1v6h-1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"></path>
     </svg></button></div>
     <footer>
@@ -345,7 +345,7 @@
                     let inputElement = document.getElementById('message');
 
                     inputElement.addEventListener('keydown', function(event) {
-                        if (event.keyCode === 13) {
+                        if (event.keyCode === 13 && !event.shiftKey) {
                             event.preventDefault();
                             let message = document.getElementById('message').value;
                             if (ws === null || ws === undefined || ws === "" ) {
