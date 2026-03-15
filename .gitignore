@@ -115,3 +115,14 @@ logs/
 *.tmp
 *.temp
 .cache/
+
+# ==================== Go ====================
+# 编译产物
+minichat
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
