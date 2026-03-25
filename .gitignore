@@ -126,3 +126,4 @@ minichat
 *.dylib
 *.test
 *.out
+.DS_Store
