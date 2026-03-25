@@ -127,3 +127,4 @@ minichat
 *.test
 *.out
 .DS_Store
+setup_claude_dir.py
